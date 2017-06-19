@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B6102471EF6CA380071D41F /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B6102451EF6CA380071D41F /* libcrypto.a */; };
+		3B6102481EF6CA380071D41F /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B6102461EF6CA380071D41F /* libssl.a */; };
 		3B9AE65E1D0D59AD00044BEB /* libsodium.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B9AE65C1D0D598500044BEB /* libsodium.a */; };
 		6205309618D4443E00887D3E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 621571AA16CF6BCB003D96B4 /* Foundation.framework */; };
 		6205309918D4443E00887D3E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6205309818D4443E00887D3E /* main.m */; };
@@ -71,7 +73,6 @@
 		627A6E0518B47E9300493BBC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 627A6E0418B47E9300493BBC /* main.m */; };
 		627A6E0C18B47E9300493BBC /* SWBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 627A6E0B18B47E9300493BBC /* SWBAppDelegate.m */; };
 		627A6E1118B47E9300493BBC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 627A6E1018B47E9300493BBC /* Images.xcassets */; };
-		627A6E3F18B47F5400493BBC /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 627A6E3E18B47F5400493BBC /* libcrypto.dylib */; };
 		627A6E4118B47FAE00493BBC /* encrypt.c in Sources */ = {isa = PBXBuildFile; fileRef = 628693EE16DA2815008B1A26 /* encrypt.c */; };
 		627A6E4218B47FAE00493BBC /* table.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CD119B175E3E17008C4D0C /* table.m */; };
 		627A6E4318B47FAE00493BBC /* local.m in Sources */ = {isa = PBXBuildFile; fileRef = 628693F016DA2816008B1A26 /* local.m */; };
@@ -227,6 +228,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3B6102451EF6CA380071D41F /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
+		3B6102461EF6CA380071D41F /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
 		3B9AE65C1D0D598500044BEB /* libsodium.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libsodium.a; sourceTree = SOURCE_ROOT; };
 		6205309518D4443E00887D3E /* shadowsocks_sysconf */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = shadowsocks_sysconf; sourceTree = BUILT_PRODUCTS_DIR; };
 		6205309818D4443E00887D3E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -515,10 +518,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B6102471EF6CA380071D41F /* libcrypto.a in Frameworks */,
+				3B6102481EF6CA380071D41F /* libssl.a in Frameworks */,
 				3B9AE65E1D0D59AD00044BEB /* libsodium.a in Frameworks */,
 				628C91C61A07B6C800BA1566 /* QuartzCore.framework in Frameworks */,
 				62E27E5E18C1D1000086033D /* libz.dylib in Frameworks */,
-				627A6E3F18B47F5400493BBC /* libcrypto.dylib in Frameworks */,
 				627A6DF918B47E9300493BBC /* Cocoa.framework in Frameworks */,
 				625E5BBE19EA3855007A5124 /* WebKit.framework in Frameworks */,
 				62E2E19B1A5AB23700C9A2E1 /* Security.framework in Frameworks */,
@@ -573,6 +577,8 @@
 		621571A716CF6BCB003D96B4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3B6102451EF6CA380071D41F /* libcrypto.a */,
+				3B6102461EF6CA380071D41F /* libssl.a */,
 				62E2E19A1A5AB23700C9A2E1 /* Security.framework */,
 				62E2E1981A5AB21E00C9A2E1 /* SystemConfiguration.framework */,
 				628C91C51A07B6C800BA1566 /* QuartzCore.framework */,
@@ -1061,6 +1067,11 @@
 				CLASSPREFIX = SWB;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = clowwindy;
+				TargetAttributes = {
+					627A6DF618B47E9300493BBC = {
+						DevelopmentTeam = YMVVQH3HB4;
+					};
+				};
 			};
 			buildConfigurationList = 621571A016CF6BCA003D96B4 /* Build configuration list for PBXProject "shadowsocks" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1624,6 +1635,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = YMVVQH3HB4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -1643,6 +1655,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					/usr/local/Cellar/openssl/1.0.2l/lib,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "clowwindy.${PRODUCT_NAME:rfc1034identifier}";
@@ -1663,6 +1676,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = YMVVQH3HB4;
 				ENABLE_NS_ASSERTIONS = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1679,6 +1693,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					/usr/local/Cellar/openssl/1.0.2l/lib,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "clowwindy.${PRODUCT_NAME:rfc1034identifier}";
